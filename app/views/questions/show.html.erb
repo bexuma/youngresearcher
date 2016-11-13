@@ -2,27 +2,27 @@
 
 <div id="post_show_content" class="skinny_wrapper wrapper_padding">
 	<header>
-		<p class="date"><%= @clarify.created_at.strftime('%m %B, %Y') %></p>
-		<h1><%= @clarify.title %></h1>
+		<p class="date"><%= @question.created_at.strftime('%m %B, %Y') %></p>
+		<h1><%= @question.title %></h1>
 		<hr>
 	</header>
 
 	<div id="content">
-		<%= @clarify.content %>
+		<%= @question.content %>
 	</div>
 
 	
 		<div id="admin_links">
-			<%= link_to 'Back', clarifies_path %>
-			<%= link_to 'Edit', edit_clarify_path(@clarify) %>
-			<%= link_to "Delete Article", clarify_path(@clarify), method: :delete, data: { confirm: "Are you sure?"} %>
+			<%= link_to 'Back', questions_path %>
+			<%= link_to 'Edit', edit_question_path(@question) %>
+			<%= link_to "Delete Article", question_path(@question), method: :delete, data: { confirm: "Are you sure?"} %>
 		</div>
 	
 
 	<hr>
 
 	<div id="share_box">
-		<p>Share <%= @clarify.title %></p>
+		<p>Share <%= @question.title %></p>
 		<a href=""><i class="fa fa-twitter"></i></a>
 		<a href=""><i class="fa fa-facebook"></i></a>
 		<a href=""><i class="fa fa-vk"></i></a>

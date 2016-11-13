@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1 id="page_title">Explores</h1>
+
+<div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
+  <div class="post">
+    <% @explores.each do |explore| %>
+      <h2><%= link_to explore.title, explore %></h2>
+      <p class="date"><%= explore.created_at.strftime("%A, %B %d") %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'New Explore', new_explore_path %>

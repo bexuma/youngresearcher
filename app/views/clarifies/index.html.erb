@@ -1,29 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Clarifies</h1>
+<h1 id="page_title">Clarifies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
+  <div class="post">
     <% @clarifies.each do |clarify| %>
-      <tr>
-        <td><%= clarify.title %></td>
-        <td><%= clarify.content %></td>
-        <td><%= link_to 'Show', clarify %></td>
-        <td><%= link_to 'Edit', edit_clarify_path(clarify) %></td>
-        <td><%= link_to 'Destroy', clarify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <h2><%= link_to clarify.title, clarify %></h2>
+      <p class="date"><%= clarify.created_at.strftime("%A, %B %d") %></p>
+      <hr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
+  </div>
+</div>
 <%= link_to 'New Clarify', new_clarify_path %>

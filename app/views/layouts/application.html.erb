@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Youngresearcher</title>
+    <meta name="google-site-verification" content="5GXaMHPjpRmPmDbCG3_4kcw6wAM81oA0o9UYE0xWsxI" />
+    <title>Young Researcher</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87259892-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
   </head>
 
   <body>
+    <header id="main_navigation" class="clearfix">
+      <%= link_to "young researcher", root_path, class: "name" %>
+  	  <nav>
+        <%= link_to "Question", questions_path %>
+        <%= link_to "Clarify", clarifies_path %>
+        <%= link_to "Explore", explores_path %>
+        
+  	  </nav>
+    </header>
+    
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+
+    <footer id="main_footer">
+      <p class="copyright">Young Researcher &copy;2016</p>
+      
+      <nav>
+        <a href="https://www.instagram.com/youngresearcher.co/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/channel/UCOJfx32PmiPG5PGTa4d6AMw" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a href="https://vk.com/youngresearcher" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/youngresearch_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/youngresearcher.co/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.google.com/kushumew/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        
+      </nav>
+      <hr>
+      <a href="mailto:contact@youngresearcher.co">Mail us</a>
+    </footer>
+
   </body>
 </html>
+

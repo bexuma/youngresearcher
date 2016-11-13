@@ -1,5 +1,6 @@
 class ClarifiesController < ApplicationController
   before_action :set_clarify, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /clarifies
   # GET /clarifies.json

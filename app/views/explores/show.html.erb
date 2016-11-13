@@ -13,9 +13,11 @@
 
 	
 		<div id="admin_links">
-			<%= link_to 'Back', explores_path %>
-			<%= link_to 'Edit', edit_explore_path(@explore) %>
+		<% if user_signed_in? %>
+			<%= link_to "Edit Article", edit_explore_path(@explore) %>
 			<%= link_to "Delete Article", explore_path(@explore), method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+		<%= link_to 'Back', explores_path %>
 		</div>
 	
 

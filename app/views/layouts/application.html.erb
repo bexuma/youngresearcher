@@ -28,6 +28,9 @@
         <%= link_to "Question", questions_path %>
         <%= link_to "Clarify", clarifies_path %>
         <%= link_to "Explore", explores_path %>
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% end %>
         
   	  </nav>
     </header>

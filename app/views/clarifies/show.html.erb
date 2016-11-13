@@ -11,14 +11,14 @@
 		<%= markdown @clarify.content %>
 	</div>
 
-	
 		<div id="admin_links">
-			<%= link_to 'Back', clarifies_path %>
-			<%= link_to 'Edit', edit_clarify_path(@clarify) %>
+		<% if user_signed_in? %>
+			<%= link_to "Edit Article", edit_clarify_path(@clarify) %>
 			<%= link_to "Delete Article", clarify_path(@clarify), method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+		<%= link_to 'Back', clarifies_path %>
 		</div>
 	
-
 	<hr>
 
 	<div id="share_box">

@@ -1,0 +1,1 @@
+json.array! @clarifies, partial: 'clarifies/clarify', as: :clarify

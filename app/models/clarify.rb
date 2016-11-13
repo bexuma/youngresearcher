@@ -1,0 +1,2 @@
+class Clarify < ApplicationRecord
+end

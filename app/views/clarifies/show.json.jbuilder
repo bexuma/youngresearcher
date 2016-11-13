@@ -1,0 +1,1 @@
+json.partial! "clarifies/clarify", clarify: @clarify

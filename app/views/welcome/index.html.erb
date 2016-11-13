@@ -1,1 +1,26 @@
-<h1>Homepage</h1>
+<div class="wrapper wrapper_padding clearfix">
+	<div class="col-1 about homepage_content">
+		<h2>About</h2>
+		<hr>
+		<p>I am an independent researcher who is curious about exploring the World.</p>
+		<p>By the day I am a regular student, but in the evening a researcher wakes up.</p>
+		<p>You can follow me on Instagram, Twitter, Facabook, Vk, Youtube</p>
+	</div>
+	<div class="col-2 homepage_content">
+		<h2>Clarifies</h2>
+		<hr>
+		<% @clarifies.each do |clarify| %>
+			<h3><a href="#"><%= link_to clarify.title, clarify %></a></h3>
+			<p class="date"><%= clarify.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+	</div>
+	<div class="col-3 homepage_content">
+		<h2>Questions</h2>
+		<hr>
+		<% @questions.each do |question| %>
+			<h3><a href="#"><%= link_to question.title, question %></a></h3>
+			<p class="date"><%= question.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+	</div>
+
+</div>

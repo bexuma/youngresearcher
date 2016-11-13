@@ -4,7 +4,7 @@ class ExploresController < ApplicationController
   # GET /explores
   # GET /explores.json
   def index
-    @explores = Explore.all
+    @explores = Explore.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /explores/1

@@ -4,7 +4,7 @@ class ClarifiesController < ApplicationController
   # GET /clarifies
   # GET /clarifies.json
   def index
-    @clarifies = Clarify.all
+    @clarifies = Clarify.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /clarifies/1

@@ -64,11 +64,11 @@ class ExploresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_explore
-      @explore = Explore.find(params[:id])
+      @explore = Explore.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def explore_params
-      params.require(:explore).permit(:title, :content)
+      params.require(:explore).permit(:title, :content, :slug)
     end
 end

@@ -64,11 +64,11 @@ class ClarifiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_clarify
-      @clarify = Clarify.find(params[:id])
+      @clarify = Clarify.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clarify_params
-      params.require(:clarify).permit(:title, :content)
+      params.require(:clarify).permit(:title, :content, :slug)
     end
 end

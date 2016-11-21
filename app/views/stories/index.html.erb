@@ -1,7 +1,5 @@
 <% content_for :title, "Young Researcher's Stories" %>
 
-<p id="notice"><%= notice %></p>
-
 <h1 id="page_title">Stories</h1>
 
 <div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
@@ -13,9 +11,11 @@
     <% end %>
   </div>
 </div>
-<div id="admin_links">
-	<% if user_signed_in? %>
-		<%= link_to 'New Story', new_story_path %>
-	<% end %>
-</div>
+
+<% if user_signed_in? %>
+  <div id="admin_links">
+    <%= link_to 'New Story', new_story_path %>
+  </div>
+<% end %>
+
 <%= will_paginate @stories %>

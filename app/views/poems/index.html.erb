@@ -1,7 +1,5 @@
 <% content_for :title, "Young Researcher's Poems" %>
 
-<p id="notice"><%= notice %></p>
-
 <h1 id="page_title">Poems</h1>
 
 <div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
@@ -13,9 +11,11 @@
     <% end %>
   </div>
 </div>
-<div id="admin_links">
-	<% if user_signed_in? %>
-		<%= link_to 'New Poem', new_poem_path %>
-	<% end %>
-</div>
+
+<% if user_signed_in? %>
+  <div id="admin_links">
+    <%= link_to 'New Poem', new_poem_path %>
+  </div>
+<% end %>
+
 <%= will_paginate @poems %>

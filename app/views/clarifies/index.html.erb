@@ -1,7 +1,5 @@
 <% content_for :title, "Young Researcher Clarifies" %>
 
-<p id="notice"><%= notice %></p>
-
 <h1 id="page_title">Clarifies</h1>
 
 <div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
@@ -13,9 +11,10 @@
     <% end %>
   </div>
 </div>
-<div id="admin_links">
-	<% if user_signed_in? %>
+
+<% if user_signed_in? %>
+  <div id="admin_links">
 		<%= link_to 'New Clarify', new_clarify_path %>
-	<% end %>
-</div>
+  </div>
+<% end %>
 <%= will_paginate @clarifies %>

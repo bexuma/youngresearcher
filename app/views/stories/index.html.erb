@@ -3,7 +3,7 @@
 <h1 id="page_title">Stories</h1>
 
 <div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
-  <div class="story">
+  <div class="post">
     <% @stories.each do |story| %>
       <h2><%= link_to story.title, story %></h2>
       <p class="date"><%= story.created_at.strftime("%A, %B %d") %></p>

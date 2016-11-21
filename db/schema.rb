@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113081738) do
+ActiveRecord::Schema.define(version: 20161121100333) do
 
   create_table "clarifies", force: :cascade do |t|
     t.string   "title"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20161113081738) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "poems", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_poems_on_slug", unique: true
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -49,6 +58,15 @@ ActiveRecord::Schema.define(version: 20161113081738) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.index ["slug"], name: "index_questions_on_slug", unique: true
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_stories_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|

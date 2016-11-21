@@ -1,0 +1,12 @@
+<% content_for :title, "New Poem" %>
+
+<h id="page_title"1>New Poem</h1>
+
+<div class="skinny_wrapper wrapper_padding">
+
+<%= render 'form', poem: @poem %>
+
+<div id="admin_links">
+<%= link_to 'Back', poems_path %>
+</div>
+</div>

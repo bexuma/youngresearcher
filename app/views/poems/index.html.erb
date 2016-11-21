@@ -1,0 +1,21 @@
+<% content_for :title, "Young Researcher's Poems" %>
+
+<p id="notice"><%= notice %></p>
+
+<h1 id="page_title">Poems</h1>
+
+<div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
+  <div class="post">
+    <% @poems.each do |poem| %>
+      <h2><%= link_to poem.title, poem %></h2>
+      <p class="date"><%= poem.created_at.strftime("%A, %B %d") %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
+<div id="admin_links">
+	<% if user_signed_in? %>
+		<%= link_to 'New Poem', new_poem_path %>
+	<% end %>
+</div>
+<%= will_paginate @poems %>

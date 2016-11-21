@@ -1,0 +1,38 @@
+<% content_for :title, @story.title %>
+
+<p id="notice"><%= notice %></p>
+
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+	<header>
+		<p class="date"><%= @story.created_at.strftime('%m %B, %Y') %></p>
+		<h1><%= @story.title %></h1>
+		<hr>
+	</header>
+
+	<div id="content">
+		<%= markdown @story.content %>
+	</div>
+
+	
+		<div id="admin_links">
+		<% if user_signed_in? %>
+			<%= link_to "Edit Article", edit_story_path(@story) %>
+			<%= link_to "Delete Article", story_path(@story), method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+		<%= link_to 'Back', stories_path %>
+		</div>
+	
+
+	<hr>
+
+	<div id="share_box">
+		<p>Share <%= @story.title %></p>
+		<a href=""><i class="fa fa-twitter"></i></a>
+		<a href=""><i class="fa fa-facebook"></i></a>
+		<a href=""><i class="fa fa-vk"></i></a>
+	</div>
+
+	<hr>
+
+
+</div>

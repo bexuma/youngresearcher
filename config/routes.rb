@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :poems
+  resources :stories
   devise_for :users
   resources :explores
   resources :questions

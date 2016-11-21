@@ -13,5 +13,9 @@
     <% end %>
   </div>
 </div>
-<%= link_to 'New Clarify', new_clarify_path %>
+<div id="admin_links">
+	<% if user_signed_in? %>
+		<%= link_to 'New Clarify', new_clarify_path %>
+	<% end %>
+</div>
 <%= will_paginate @clarifies %>

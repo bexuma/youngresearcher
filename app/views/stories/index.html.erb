@@ -1,0 +1,21 @@
+<% content_for :title, "Young Researcher's Stories" %>
+
+<p id="notice"><%= notice %></p>
+
+<h1 id="page_title">Stories</h1>
+
+<div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
+  <div class="story">
+    <% @stories.each do |story| %>
+      <h2><%= link_to story.title, story %></h2>
+      <p class="date"><%= story.created_at.strftime("%A, %B %d") %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
+<div id="admin_links">
+	<% if user_signed_in? %>
+		<%= link_to 'New Story', new_story_path %>
+	<% end %>
+</div>
+<%= will_paginate @stories %>

@@ -13,5 +13,11 @@
     <% end %>
   </div>
 </div>
-<%= link_to 'New Explore', new_explore_path %>
+
+<div id="admin_links">
+	<% if user_signed_in? %>
+		<%= link_to 'New Explore', new_explore_path %>
+	<% end %>
+</div>
+
 <%= will_paginate @explores %>

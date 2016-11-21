@@ -1,4 +1,4 @@
-class Clarify < ApplicationRecord
+class Poem < ApplicationRecord
 	extend FriendlyId
   	friendly_id :title, use: :slugged
 

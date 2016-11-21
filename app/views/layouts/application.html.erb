@@ -28,6 +28,8 @@
         <%= link_to "Question", questions_path %>
         <%= link_to "Clarify", clarifies_path %>
         <%= link_to "Explore", explores_path %>
+        <%= link_to "Stories", stories_path %>
+        <%= link_to "Poems", poems_path %>
         <% if user_signed_in? %>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         <% end %>
@@ -48,15 +50,15 @@
       
       <nav>
         <a href="https://www.instagram.com/youngresearcher.co/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://www.youtube.com/channel/UCOJfx32PmiPG5PGTa4d6AMw" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a href="https://www.soundcloud.com/youngresearcher" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
         <a href="https://vk.com/youngresearcher" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
         <a href="https://twitter.com/youngresearch_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         <a href="https://www.facebook.com/youngresearcher.co/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         <a href="https://www.google.com/kushumew/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="mailto:contact@youngresearcher.co"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
         
       </nav>
-      <hr>
-      <a href="mailto:contact@youngresearcher.co">Mail us</a>
+    
     </footer>
 
   </body>

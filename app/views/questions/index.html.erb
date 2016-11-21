@@ -13,5 +13,9 @@
     <% end %>
   </div>
 </div>
-<%= link_to 'New Question', new_question_path %>
+<div id="admin_links">
+	<% if user_signed_in? %>
+		<%= link_to 'New Question', new_question_path %>
+	<% end %>
+</div>
 <%= will_paginate @questions %>

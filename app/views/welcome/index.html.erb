@@ -1,28 +1,15 @@
 <% content_for :title, "Young Researcher" %>
 <div class="wrapper wrapper_padding clearfix">
-	<div class="col-1 about homepage_content">
+	<div class="col-1">
+		<img src="<%= asset_path( 'me.jpg' ) %>" alt="Profile Photo" class="profile_image"/>
+	</div>
+	<div class="col-2 about homepage_content">
 		<h2>About</h2>
 		<hr>
-		<p>Hi, I am Young Researcher! Currently "studying" for a Bachelor Degree in Busan, South Korea.</p>
-		<p>I love collect and analyse big scope of data. That is the reason I have started this site.</p>
-		<p>You can read the articles here in your free time. I try to share the knowledge which I find crusial in Intellectual's development.</p>
-		<p>Follow me on Instagram, Twitter, Facabook, Vk and Youtube</p>
+		<p>Hi, I am Young Researcher! Currently study on a Bachelor of Computer Science in Busan, South Korea.</p>
+		<p>I love collecting and analysing large amount of data, hence I have started this site.</p>
+		<p>Here I share the thoughts came from my experience, publish my poems and research an ideas, results of which you can find in Question, Clarify, Explore sections.</p>
+		<p>Follow me on Instagram, Twitter, Facabook, Vkontakte, Google Plus and Youtube.</p>
+		<p><mark>Site is currently at a development stage</mark></p>
 	</div>
-	<div class="col-2 homepage_content">
-		<h2>Clarifies</h2>
-		<hr>
-		<% @clarifies.each do |clarify| %>
-			<h3><a href="#"><%= link_to clarify.title, clarify %></a></h3>
-			<p class="date"><%= clarify.created_at.strftime("%A, %b %d") %></p>
-		<% end %>
-	</div>
-	<div class="col-3 homepage_content">
-		<h2>Questions</h2>
-		<hr>
-		<% @questions.each do |question| %>
-			<h3><a href="#"><%= link_to question.title, question %></a></h3>
-			<p class="date"><%= question.created_at.strftime("%A, %b %d") %></p>
-		<% end %>
-	</div>
-
 </div>

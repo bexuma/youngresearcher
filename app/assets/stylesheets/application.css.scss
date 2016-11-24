@@ -75,11 +75,19 @@ h6 {
 
 p, li {
 	font-size: 1.1rem;
-	line-height: 1.75
+	line-height: 1.75;
 }
 
 p, ul, ol {
 	margin: 0 0 1.6em 0;
+}
+
+p {
+	text-align: justify;
+}
+
+p.date {
+	text-align: center;
 }
 
 hr {
@@ -129,6 +137,8 @@ hr {
 	padding: 2.5em 5%;
 	padding-bottom: 110px;
 	border-top: 1px solid $border;
+	width: 100%;
+	float: left;
 	.copyright {
 		float: left;
 		font-size: .9em;

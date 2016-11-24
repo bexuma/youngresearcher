@@ -8,20 +8,22 @@ a {
 
 .col-1, .col-2 {
 	float: left;
+	margin: 10px;
 }
 
 .col-1 {
-	width: 45%;
+	max-width: 520px;
 	padding: 0 2.5%;
 }
 
 .col-2 {
-	width: 55%;
+	max-width: 630px;
 	padding: 0 5% 0 2.5%;
 }
 
 .profile_image {
-	width: 400px;
+	width: 100%;
+	height: auto;
 }
 
 .homepage_content {
@@ -50,5 +52,8 @@ a {
 		color: $highlight;
 		font-weight: 700;
 		text-decoration: none;
+	}
+	p {
+		text-align: initial;
 	}
 }

@@ -27,7 +27,7 @@
 	<div id="share_box">
 		<p>Share <%= @explore.title %></p>
 		<a onclick="window.open('http://twitter.com/share?text=<%= @explore.title %> on @youngresearch_. Follow the link to Explore: &amp;<%= url_for(@explore) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
-		<a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for(@explore) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-facebook"></i></a>
+		<a onclick="window.open('http://facebook.com/sharer.php?u=<%= url_for(@explore) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-facebook"></i></a>
 		<a href="http://vk.com/share.php?url=<%= url_for(@explore) %>" target="_blank"><i class="fa fa-vk"></i></a>
 	</div>
 

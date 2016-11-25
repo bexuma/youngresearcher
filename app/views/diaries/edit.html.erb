@@ -1,12 +1,12 @@
-<% content_for :title, "New Diery" %>
+<% content_for :title, "New Diary" %>
 
-<h1 id="page_title">Editing Diery</h1>
+<h1 id="page_title">Editing Diary</h1>
 
 <div class="skinny_wrapper wrapper_padding">
-<%= render 'form', diery: @diery %>
+<%= render 'form', diary: @diary %>
 
 <div id="admin_links">
-<%= link_to 'Show', @diery %> |
-<%= link_to 'Back', dieries_path %>
+<%= link_to 'Show', @diary %> |
+<%= link_to 'Back', diaries_path %>
 </div>
 </div>

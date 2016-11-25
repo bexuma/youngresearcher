@@ -1,0 +1,21 @@
+<% content_for :title, "Young Researcher's Diary" %>
+
+<h1 id="page_title">Diary</h1>
+
+<div id="posts_wrapper" class="skinny_wrapper wrapper_padding">
+  <div class="post">
+    <% @diaries.each do |diary| %>
+      <h2><%= link_to diary.title, diary %></h2>
+      <p class="date"><%= diary.created_at.strftime("%A, %B %d") %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <div id="admin_links">
+    <%= link_to 'New Explore', new_diary_path %>
+  </div>
+<% end %>
+
+<%= will_paginate @diaries %>

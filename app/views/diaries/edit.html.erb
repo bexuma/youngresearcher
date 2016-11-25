@@ -1,0 +1,12 @@
+<% content_for :title, "New Diery" %>
+
+<h1 id="page_title">Editing Diery</h1>
+
+<div class="skinny_wrapper wrapper_padding">
+<%= render 'form', diery: @diery %>
+
+<div id="admin_links">
+<%= link_to 'Show', @diery %> |
+<%= link_to 'Back', dieries_path %>
+</div>
+</div>

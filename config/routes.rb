@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :diaries
   resources :poems
   resources :stories
   devise_for :users

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121100333) do
+ActiveRecord::Schema.define(version: 20161125131314) do
 
   create_table "clarifies", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20161121100333) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.index ["slug"], name: "index_clarifies_on_slug", unique: true
+  end
+
+  create_table "diaries", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_diaries_on_slug", unique: true
   end
 
   create_table "explores", force: :cascade do |t|

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="google-site-verification" content="5GXaMHPjpRmPmDbCG3_4kcw6wAM81oA0o9UYE0xWsxI" />
-    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <meta name="description" content="<%=yield(:meta_content) %>">
     <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">

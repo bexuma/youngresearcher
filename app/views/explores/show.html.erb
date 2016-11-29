@@ -1,4 +1,5 @@
 <% content_for :title, @explore.title %>
+<% content_for :meta_content, truncate(@explore.content, :length => 200, :separator => ' ') %>
 
 <div id="post_show_content" class="skinny_wrapper wrapper_padding">
 	<header>

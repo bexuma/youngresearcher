@@ -1,0 +1,3 @@
+entrypoint: gcloud app deploy
+env: flex
+runtime: ruby

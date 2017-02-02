@@ -12,14 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20161125131314) do
 
-  create_table "clarifies", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_clarifies_on_slug", unique: true
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "diaries", force: :cascade do |t|
     t.string   "title"
@@ -27,7 +21,7 @@ ActiveRecord::Schema.define(version: 20161125131314) do
     t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_diaries_on_slug", unique: true
+    t.index ["slug"], name: "index_diaries_on_slug", unique: true, using: :btree
   end
 
   create_table "explores", force: :cascade do |t|
@@ -35,8 +29,6 @@ ActiveRecord::Schema.define(version: 20161125131314) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_explores_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -45,37 +37,28 @@ ActiveRecord::Schema.define(version: 20161125131314) do
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
     t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "poems", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_poems_on_slug", unique: true
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_questions_on_slug", unique: true
+    t.index ["slug"], name: "index_poems_on_slug", unique: true, using: :btree
   end
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_stories_on_slug", unique: true
+    t.index ["slug"], name: "index_stories_on_slug", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,8 +74,8 @@ ActiveRecord::Schema.define(version: 20161125131314) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end

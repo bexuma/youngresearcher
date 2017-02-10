@@ -24,6 +24,42 @@
 	}
 }
 
+div.actions>input{
+	display: block;
+	margin: 0 auto;
+}
+
+blockquote {
+	border-left: 10px solid #E9E9E9;
+	margin: 0;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote>p {
+	margin-bottom: 0;
+}
+
+blockquote strong>em {
+	color: #96999e;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+
+  content: close-quote;
+  visibility: hidden;
+
+}
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Pagination
 
 .pagination {
